@@ -14,6 +14,10 @@ body {
   margin: 0 24px;
 }
 
+.support-section-container {
+  margin: 0 84px;
+}
+
 /* Header */
 .header {
   background: transparent;
@@ -92,7 +96,7 @@ body {
 
 /* Hero Section */
 .hero {
-  background-image: url("hero-section-main.jpg");
+  background-image: url("assets/hero-section-main.jpg");
   background-size: cover;
   /* background-position: center; */
   height: 100vh;
@@ -181,15 +185,16 @@ body {
 
 /* Breaking Stigma Section */
 .stigma-section {
-  padding: 80px 0;
+  padding: 58px 0;
   background: white;
 }
 
 .stigma-content {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 60px;
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
   align-items: center;
+  padding: 0px 122px;
 }
 
 .stigma-images {
@@ -232,39 +237,37 @@ body {
 
 .stigma-points li {
   display: flex;
-  align-items: center;
-  gap: 15px;
   margin-bottom: 15px;
-  font-size: 16px;
-  width: 536px;
-  height: 48px;
+  gap: 12px;
+}
+
+.stigma-points span {
+  width: 547px;
 }
 
 .check-icon {
-  width: 20px;
-  height: 20px;
+  width: 48px;
+  height: 48px;
   background: #1e3a8a;
-  border-radius: 3px;
+  border-radius: 13px;
   display: flex;
   align-items: center;
   justify-content: center;
   color: white;
-  font-size: 12px;
-  flex-shrink: 0;
-  border: 2px solid #1e3a8a;
 }
 
 .learn-more {
   color: #2c3e50;
   text-decoration: none;
   font-weight: 600;
-  display: inline-flex;
+  display: flex;
   align-items: center;
   gap: 10px;
   transition: all 0.3s;
   border-top: 1px solid #d5d8dc;
   padding-top: 15px;
   margin-top: 20px;
+  justify-content: space-between;
 }
 
 .learn-more:hover {
@@ -288,30 +291,45 @@ body {
 /* Support Resources Section */
 .support-section {
   background: #e8eaf6;
-  padding: 80px 0;
+  padding: 40px 0 68px 0;
 }
 
 .support-section h2 {
   text-align: center;
-  font-size: 36px;
-  font-weight: 700;
+  font-size: 48px;
+  font-weight: 600;
   color: #2c3e50;
-  margin-bottom: 50px;
+  margin-bottom: 44px;
+}
+
+.support-card-text {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 26px;
 }
 
 .support-cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 30px;
+  /* grid-template-columns: repeat(auto-fit, minmax(288px, 1fr)); */
+  grid-template-columns: repeat(auto-fill, 288px);
+  gap: 40px;
+  justify-content: center;
 }
 
 .support-card {
   background: white;
+  width: 288px;
+  height: 405px;
   padding: 40px 30px;
-  border-radius: 15px;
+  border-radius: 36px;
   text-align: center;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
   transition: all 0.3s;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  justify-content: center;
+  align-items: center;
 }
 
 .support-card:hover {
@@ -338,16 +356,11 @@ body {
   transform: scale(1.1);
 }
 
-.support-card h3 {
+.support-card-title {
   font-size: 20px;
-  font-weight: 600;
-  color: #2c3e50;
-  margin-bottom: 15px;
-}
-
-.support-card p {
-  color: #7f8c8d;
-  line-height: 1.6;
+  font-weight: 400;
+  color: #1E1D4C;
+  line-height: 1;
 }
 
 /* Testimonials Section */
@@ -362,11 +375,10 @@ body {
   font-weight: 600;
   font-family: "Montserrat", sans-serif;
   color: #000000;
-  margin-bottom: 50px;
+  margin-bottom: 40px;
   line-height: 100%;
   letter-spacing: 0%;
-  width: 546px;
-  height: 118px;
+
   margin-left: auto;
   margin-right: auto;
 }
@@ -375,14 +387,14 @@ body {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 20px;
-  max-width: 1200px;
   margin: 0 auto;
+  padding: 0 40px;
 }
 
 .testimonial-card {
   background: #ffffff;
-  padding: 30px;
   border-radius: 36px;
+  gap: 8px;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
   text-align: center;
   transition: all 0.3s;
@@ -399,23 +411,18 @@ body {
 }
 
 .testimonial-image {
-  width: 337px;
+  width: 100%;
   height: 185px;
-  border-radius: 36px;
-  background: #f8f9fa;
-  margin: 0 auto 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 32px;
-  color: #4a90e2;
-  background-size: cover;
-  background-position: center;
+  object-fit: cover;
+  border-radius: 36px 36px 0px 0px;
+
 }
 
 .testimonial-text {
+  width: 271px;
+  font-family: 'montserrat';
+
   font-style: normal;
-  margin-bottom: 20px;
   color: #000000;
   line-height: 1.6;
   font-size: 16px;
@@ -427,12 +434,11 @@ body {
   font-weight: 400;
   color: #666666;
   font-size: 14px;
-  margin-bottom: 8px;
   text-align: center;
 }
 
 .testimonial-name {
-  font-weight: 400;
+  font-weight: 700;
   color: #000000;
   font-size: 16px;
   text-align: center;
@@ -494,19 +500,6 @@ body {
 .get-started-btn:hover {
   background: #1e3a66;
   transform: translateY(-2px);
-}
-
-.first-step-image {
-  background-image: url("Take-the-First-Step-Toward-Healing.png");
-  background-size: cover;
-  background-position: center;
-  width: 621px;
-  height: 257px;
-  border-radius: 36px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
 }
 
 .promo-boxes {
@@ -577,7 +570,7 @@ body {
 
 /* Footer */
 .footer {
-  background: #e8eaf6;
+  background: #F0F4F8;
   padding: 60px 0 30px;
 }
 
@@ -604,7 +597,7 @@ body {
 .footer-links h4 {
   font-size: 16px;
   font-weight: 600;
-  color: #2c3e50;
+  color: #000000;
   margin-bottom: 15px;
 }
 
@@ -628,9 +621,9 @@ body {
 
 .get-in-touch-btn {
   background: white;
-  color: #2c3e50;
+  color: #1E3A8A;
   padding: 12px 24px;
-  border: 2px solid #2c3e50;
+  border: 2px solid #1E3A8A;
   border-radius: 25px;
   text-decoration: none;
   font-weight: 600;
@@ -639,12 +632,11 @@ body {
 }
 
 .get-in-touch-btn:hover {
-  background: #2c3e50;
+  background: #1E3A8A;
   color: white;
 }
 
 .footer-bottom {
-  border-top: 1px solid #d5d8dc;
   padding-top: 30px;
   display: flex;
   justify-content: space-between;
@@ -657,10 +649,11 @@ body {
 }
 
 .social-links a {
-  width: 40px;
+  width: 50px;
   height: 40px;
-  background: #4a90e2;
-  border-radius: 50%;
+  background: transparent;
+  border: 1px solid #1E3A8A;
+  border-radius: 50px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -669,9 +662,21 @@ body {
   transition: all 0.3s;
 }
 
+.instagram-icon,
+.facebook-icon {
+  color: #1E3A8A;
+}
+
+
+
 .social-links a:hover {
   background: #357abd;
   transform: translateY(-2px);
+}
+
+
+.social-links a:hover i {
+  color: white;
 }
 
 .contact-info {
@@ -682,6 +687,7 @@ body {
 .copyright {
   color: #7f8c8d;
   font-size: 14px;
+  text-align: right;
 }
 
 /* Responsive Design */
