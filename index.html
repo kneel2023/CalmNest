@@ -29,10 +29,70 @@
                         <li><a href="#contact">Contact</a></li>
                     </ul>
                 </nav>
-                <a href="#" class="sign-in-btn">Sign in</a>
+                <div class="header-actions">
+                    <button class="theme-toggle-btn" id="themeToggle" title="Toggle Theme">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <button class="sign-in-btn" id="openSignupModal">Sign Up</button>
+                </div>
             </div>
         </div>
     </header>
+
+    <!-- Floating Action Buttons -->
+    <div class="floating-buttons">
+        <button class="fab-btn" id="scrollToTop" title="Scroll to Top">
+            <i class="fas fa-chevron-up"></i>
+        </button>
+    </div>
+
+    <!-- Signup Modal -->
+    <div class="modal-overlay" id="signupModal">
+        <div class="modal-container">
+            <div class="modal-header">
+                <h2>Join CalmNest</h2>
+                <button class="modal-close" id="closeModal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form class="signup-form" id="signupForm">
+                    <div class="form-group">
+                        <input type="text" id="fullName" placeholder="Full Name" required>
+                        <span class="error-message" id="fullNameError"></span>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="signupEmail" placeholder="Email Address" required>
+                        <span class="error-message" id="signupEmailError"></span>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" id="password" placeholder="Password" required>
+                        <span class="error-message" id="passwordError"></span>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" id="confirmPassword" placeholder="Confirm Password" required>
+                        <span class="error-message" id="confirmPasswordError"></span>
+                    </div>
+                    <div class="form-group checkbox-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="agreeTerms" required>
+                            <span class="checkmark"></span>
+                            I agree to the <a href="#" class="terms-link">Terms of Service</a> and <a href="#" class="terms-link">Privacy Policy</a>
+                        </label>
+                    </div>
+                    <button type="submit" class="btn-primary signup-btn">
+                        <span class="btn-text">Create Account</span>
+                        <span class="btn-loading" style="display: none;">
+                            <i class="fas fa-spinner fa-spin"></i> Creating...
+                        </span>
+                    </button>
+                </form>
+                <div class="modal-footer">
+                    <p>Already have an account? <a href="#" class="signin-link">Sign In</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Hero Section -->
     <section class="hero">
@@ -49,14 +109,51 @@
         </div>
     </section>
 
+    <!-- Mood Tracker Widget -->
+    <section class="mood-tracker-section">
+        <div class="container">
+            <div class="mood-tracker-widget">
+                <div class="mood-tracker-header">
+                    <h3>How are you feeling today?</h3>
+                    <p class="mood-subtitle">Your emotions matter. Take a moment to check in with yourself.</p>
+                </div>
+                <div class="mood-options">
+                    <button class="mood-btn" data-mood="great" title="Great">
+                        <i class="fas fa-grin-beam"></i>
+                        <span>Great</span>
+                    </button>
+                    <button class="mood-btn" data-mood="good" title="Good">
+                        <i class="fas fa-smile"></i>
+                        <span>Good</span>
+                    </button>
+                    <button class="mood-btn" data-mood="okay" title="Okay">
+                        <i class="fas fa-meh"></i>
+                        <span>Okay</span>
+                    </button>
+                    <button class="mood-btn" data-mood="sad" title="Sad">
+                        <i class="fas fa-frown"></i>
+                        <span>Sad</span>
+                    </button>
+                    <button class="mood-btn" data-mood="stressed" title="Stressed">
+                        <i class="fas fa-dizzy"></i>
+                        <span>Stressed</span>
+                    </button>
+                </div>
+                <div class="mood-feedback" id="moodFeedback" style="display: none;">
+                    <p id="moodMessage"></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Breaking Stigma Section -->
     <section class="stigma-section">
         <div class="container">
             <div class="stigma-content">
-                <div>
+                <div class="stigma-left">
                     <img src="assets/breaking-the-stigma-left-image.png" />
                 </div>
-                <div>
+                <div class="stigma-right">
                     <div class="stigma-text">
                         <h2>Breaking The Stigma. Building Awareness.</h2>
                         <ul class="stigma-points">
@@ -90,8 +187,8 @@
             <div class="support-cards">
                 <div class="support-card">
                     <img src="assets/support-and-resources-1.png" height="100px" width="100px" />
-                    <p class="support-card-title">Talk to a Specialist Psychologist</p>
-                    <p class="support-card-text">Book private one-on-one sessions with licensed psychologists for
+                    <h3>Talk to a Specialist Psychologist</h3>
+                    <p>Book private one-on-one sessions with licensed psychologists for
                         stress, anxiety, or personal
                         challenges.</p>
                 </div>
@@ -117,11 +214,40 @@
         </div>
     </section>
 
+    <!-- Statistics Section -->
+    <section class="statistics-section">
+        <div class="container">
+            <div class="statistics-grid">
+                <div class="stat-item">
+                    <div class="stat-number" data-target="1000">0</div>
+                    <div class="stat-label">Happy Clients</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-target="50">0</div>
+                    <div class="stat-label">Expert Psychologists</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-target="5000">0</div>
+                    <div class="stat-label">Sessions Completed</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-target="95">0</div>
+                    <div class="stat-label">Success Rate %</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Testimonials Section -->
     <section class="testimonials-section">
         <div class="">
             <h2>What People Say About Us</h2>
-            <div class="testimonials-grid">
+            <div class="testimonials-container">
+                <button class="carousel-btn prev" id="prevTestimonial">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <div class="testimonials-carousel">
+                    <div class="testimonials-track" id="testimonialsTrack">
                 <div class="testimonial-card">
                     <img src="assets/John-Doe-1.jpg" class="testimonial-image" />
                     <p class="testimonial-text">Talking to a psychologist here made me feel heard and safe. It
@@ -151,7 +277,13 @@
                     <div class="testimonial-author">(College Student)</div>
                     <div class="testimonial-name">— John Doe</div>
                 </div>
+                    </div>
+                </div>
+                <button class="carousel-btn next" id="nextTestimonial">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
             </div>
+            <div class="carousel-indicators" id="carouselIndicators"></div>
         </div>
     </section>
 
@@ -179,6 +311,54 @@
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Contact Form -->
+    <section class="contact-form-section" id="contact">
+        <div class="container">
+            <div class="contact-form-container">
+                <h2>Get in Touch</h2>
+                <p>Ready to start your journey to better mental health? Contact us today.</p>
+                <form class="contact-form" id="contactForm">
+                    <div class="form-group">
+                        <input type="text" id="name" name="name" placeholder="Your Name" required>
+                        <span class="error-message" id="nameError"></span>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" name="email" placeholder="Your Email" required>
+                        <span class="error-message" id="emailError"></span>
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" id="phone" name="phone" placeholder="Your Phone Number">
+                        <span class="error-message" id="phoneError"></span>
+                    </div>
+                    <div class="form-group">
+                        <select id="service" name="service" required>
+                            <option value="">Select a Service</option>
+                            <option value="consultation">Initial Consultation</option>
+                            <option value="therapy">Therapy Session</option>
+                            <option value="group">Group Support</option>
+                            <option value="emergency">Crisis Support</option>
+                        </select>
+                        <span class="error-message" id="serviceError"></span>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" name="message" placeholder="Tell us how we can help you" rows="5" required></textarea>
+                        <span class="error-message" id="messageError"></span>
+                    </div>
+                    <button type="submit" class="btn-primary submit-btn">
+                        <span class="btn-text">Send Message</span>
+                        <span class="btn-loading" style="display: none;">
+                            <i class="fas fa-spinner fa-spin"></i> Sending...
+                        </span>
+                    </button>
+                    <div class="success-message" id="successMessage" style="display: none;">
+                        <i class="fas fa-check-circle"></i>
+                        Thank you! We'll get back to you soon.
+                    </div>
+                </form>
             </div>
         </div>
     </section>
